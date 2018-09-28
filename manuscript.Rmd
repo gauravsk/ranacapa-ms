@@ -1,24 +1,22 @@
 ---
-title: "ranacapa: An R package to explore environmental DNA data with exploratory statistics and interactive visualizations"
-author: "Gaurav S. Kandlikar (1,+), Zachary J. Gold (1), Madeline C. Cowen (1), Rachel S. Meyer (1), Amanda C. Freise (2), Nathan J.B. Kraft (1), Jordan Moberg-Parker (2), Joshua Sprague (3), David Kushner (3), and Emily E. Curd (1)"
+title: 'ranacapa: An R package to explore environmental DNA data with exploratory
+  statistics and interactive visualizations'
+author: Gaurav S. Kandlikar (1,+), Zachary J. Gold (1), Madeline C. Cowen (1), Rachel
+  S. Meyer (1), Amanda C. Freise (2), Nathan J.B. Kraft (1), Jordan Moberg-Parker
+  (2), Joshua Sprague (3), David Kushner (3), and Emily E. Curd (1)
+fontsize: 11pt
+output: 
+  word_document:
+    reference_docx: rendering-templates/word_template.docx
+header-includes: \usepackage{color} \usepackage{lineno} \linenumbers \linespread{1.5}
+  \usepackage{float} \usepackage[table]{xcolor} \usepackage{setspace} \usepackage{amsmath}
+  \numberwithin{equation}{section} \usepackage{breqn} \usepackage{booktabs} \usepackage{parskip}
+  \usepackage{tabularx} \setlength{\parindent}{5ex} \usepackage{sectsty} \paragraphfont{\normalfont\itshape}
 fontfamily: mathpazo
 urlcolor: blue
-fontsize: 11pt
-header-includes: 
-  \usepackage{color} 
-  \usepackage{lineno} \linenumbers \linespread{1.5}  
-  \usepackage{float}
-  \usepackage[table]{xcolor} 
-  \usepackage{setspace}
-  \usepackage{amsmath}
-  \numberwithin{equation}{section} 
-  \usepackage{breqn}
-  \usepackage{booktabs}
-  \usepackage{parskip}
-  \usepackage{tabularx}
-  \setlength{\parindent}{5ex}
-  \newcommand{\GG}[1]{}
-  \usepackage{sectsty} \paragraphfont{\normalfont\itshape}
+always_allow_html: yes
+bibliography: bibliography.bib
+csl: rendering-templates/ecology-letters.csl
 ---
   
   
@@ -30,17 +28,18 @@ options(digits = 3)
 
 \setstretch{1.2}
 
-\noindent
-\textbf{Affiliations \& Contact Information}:  
+### Affiliations and Contact Information  
 (1) Department of Ecology and Evolutionary Biology, University of California – Los Angeles   
-(2) Department of Microbiology and Molecular Genetics, University of California – Los Angeles (3) National Park Service     
+(2) Department of Microbiology and Molecular Genetics, University of California – Los Angeles  
+(3) National Park Service     
 
 (+) Corresponding Author  
-\hspace{5pt} - Email: gkandlikar@ucla.edu    
-- Phone: (+1) 952-288-7351    
-- Mailing Address: Dept. of Ecology & Evolutionary Biology, 621 Charles E. Young Drive S., Los Angeles, CA 90095    
-\noindent
-\textbf{Keywords}: environmental DNA; data visualization; citizen science; community science; shiny; metabarcoding; education; community ecology
+
+- Email: gkandlikar@ucla.edu
+- Phone: (+1) 952-288-7351
+- Mailing Address: Dept. of Ecology & Evolutionary Biology, 621 Charles E. Young Drive S., Los Angeles, CA 90095
+
+**Keywords**: environmental DNA; data visualization; citizen science; community science; shiny; metabarcoding; education; community ecology
 
 \clearpage
 
@@ -54,51 +53,70 @@ options(digits = 3)
 
 ## Introduction
 
-The targeted amplification and sequencing of DNA that living organisms shed into the physical environment they occupy (termed “environmental DNA metabarcoding”, or “eDNA sequencing”)  is revolutionizing microbiology, ecology, and conservation research. (Taberlet et al. 2012, Deiner et al. 2017).  Sequencing of DNA extracted from field-collected soil, water, or sediment samples holds great promise to shed light on a range of questions, ranging from tracking the dynamics of bacterial communities and profiling the composition of ancient plant and animal communities (Props et al. 2017, Pedersen et al. 2014), to motoring populations of rare or endangered species (Balasingham et al. 2017).  As the cost of eDNA sequencing declines and sample collection techniques become more streamlined (Thomas et al. 2018), professional research scientists are also beginning to use eDNA sequencing as a platform to partner with members of the community, such as natural resource managers, undergraduate students, and citizen scientists (collectively referred to in this manuscript as “community scientists”), in primary research. However, developing robust and impactful community science partnerships that engage the community in all steps of the research process remains a challenge.
+The targeted amplification and sequencing of DNA that living organisms shed into the physical environment they occupy (termed “environmental DNA metabarcoding”, or “eDNA sequencing”)  is revolutionizing microbiology, ecology, and conservation research. [@Taberlet_2012; @Deiner_2017].  Sequencing of environmental DNA extracted from field-collected soil, water, or sediment samples holds great promise to shed light on a range of questions, ranging from tracking the dynamics of bacterial communities or profiling the composition of ancient plant and animal communities [@Props_2016; @Pedersen_2014], to motoring populations of rare or endangered species [@Balasingham_2017]. As the cost of eDNA sequencing declines and sample collection techniques become more streamlined (e.g. @Thomas_2018), professional research scientists are increasingly using eDNA sequencing as a platform to partner with members of the community, such as natural resource managers, undergraduate students, and citizen scientists (collectively referred to in this manuscript as “community scientists”), in primary research. However, developing robust and impactful community science programs that engage community partners in all steps of the research process remains a challenge.
 
-eDNA sequencing-based projects work well for community science partnerships because non-experts can be quickly trained to collect samples in the field and because eDNA sequencing is an exciting framework for descriptive and hypothesis-driven research pertinent to disciplines such as medicine, agriculture, ecology, and geography (Deiner et al. 2017).  The community partners in such programs can have heterogeneous backgrounds, ranging from curious members of the public for whom collecting samples in the field is the first scientific research experience (e.g. University of California’s CALeDNA program, http://www.ucedna.com/), to professional natural resource managers who regularly collaborate with research scientists (e.g. Center for Ocean Solutions’ eDNA project, https://oceansolutions.stanford.edu/project-environmental-dna). In these partnerships (as in any other), community participants should be able to participate across multiple stages of the project, not only in sample collection (Pandya 2012, https://ecsa.citizen-science.net/sites/default/files/ecsa_ten_principles_of_citizen_science.pdf). This can be a challenge for eDNA sequencing-based community science programs because although it is relatively easy to train community partners to collect eDNA samples, it is far more challenging to train them to interact with and visualize the results from these studies.
+eDNA sequencing-based projects work well for community science partnerships because non-experts can be quickly trained to collect samples in the field, and because eDNA sequencing is an exciting framework for research pertinent to disciplines such as medicine, agriculture, ecology, and geography [@Deiner_2017].  The community partners in these programs can have heterogeneous backgrounds, ranging from curious members of the public for whom collecting samples in the field is the first scientific research experience (e.g. University of California’s CALeDNA program, http://www.ucedna.com/), to professional natural resource managers who regularly collaborate with research scientists (e.g. Center for Ocean Solutions’ eDNA project, https://oceansolutions.stanford.edu/project-environmental-dna). In these partnerships (as in any other), community participants should be able to participate across multiple stages of the project, not only in sample collection (@Pandya_2012, https://ecsa.citizen-science.net/sites/default/files/ecsa_ten_principles_of_citizen_science.pdf). This can be a challenge for eDNA sequencing-based community science programs because although it is relatively easy to train community partners to collect eDNA samples, it is far more challenging to train them to interact with and visualize the results from these studies.
 
-Engaging community partners in data exploration and analysis phases of eDNA sequencing-based research projects is challenging because these studies generate datasets that are large, multidimensional, and stored in idiosyncratic formats (e.g. BIOM tables). Indeed, learning the bioinformatic tools necessary for managing and analyzing these data is a major hurdle even for professional researchers (Mulder et al. 2018). To address this challenge, we created an R package “ranacapa”, at the core of which is a Shiny webapp that allows users to make exploratory visualizations and perform simple community ecology analyses with results from eDNA sequencing studies.  Include a sentence that repeats that this is a first step. ranacapa complements existing visualization platforms (e.g. Phinch, Phyloseq-Shiny, QIIME2 Viewer), as in addition to interactive visualizations, ranacapa includes brief explanations and links to additional educational resources to provide users with an overview of basic data analyses used in eDNA studies. ranacapa works with community matrices generated via QIIME () and stored as BIOM tables or with community matrices generated with the Anacapa sequence analysis pipeline (https://github.com/limey-bean/Anacapa), which is used extensively by the CALeDNA program.
+Engaging community partners in data exploration and analysis phases of eDNA sequencing-based research projects is challenging because learning the bioinformatic tools necessary for visualizing and analyzing the large, multidimensional datasets generated from eDNA sequencing studies can be difficult for professional researchers [@Carey_2018], let alone for the diverse community partners of community science programs. To address this challenge, we created an R package “ranacapa”, at the core of which is a Shiny webapp with which users can visualize and perform simple community ecology analyses on results from eDNA sequencing studies.  ranacapa complements existing visualization platforms (e.g. Phinch, Phyloseq-Shiny, QIIME2 Viewer), because in addition to interactive visualizations, ranacapa includes brief explanations and links to additional educational resources to provide users with an overview of basic data analyses used in eDNA studies. ranacapa works with community matrices generated via QIIME () and stored as BIOM tables or with community matrices generated with the Anacapa sequence analysis pipeline (https://github.com/limey-bean/Anacapa), which is used extensively by the CALeDNA program.
 
 In the remainder of this manuscript, we describe ranacapa and demonstrate its use by two community science partnerships based at the University of California, Los Angeles (UCLA): first, a collaboration between eDNA researchers and resource managers at the National Park Service, and second, a partnership between community ecology researchers and an undergraduate microbiology course at UCLA. As we show in the Use Cases, empowering community partners to interact with the data and perform simple but insightful community ecology analyses can help make these collaborations more enriching and valuable to both parties.     
 
 ## Implementation
-ranacapa consists of a Shiny webapp (Chang et al. 2017) and two categories of helper functions (Table 1). The first set of functions works to connect the taxonomy tables, generated either by the Anacapa eDNA sequence analysis pipeline (https://github.com/limey-bean/Anacapa; Curd et al. in prep) or QIIME (Caporaso 2010), into phyloseq objects that can be used for downstream visualizations and analyses. The second set of functions, which includes two externally written functions openly available on GitHub, extends the visualization and statistical functionality of the phyloseq (McMurdie and Holmes 2013) and vegan (Oksanen et al. 2018) packages.
+ranacapa consists of a Shiny webapp (@Chang_2018) and two categories of helper functions (Table 1). The first set of functions works to connect the taxonomy tables, generated either by the Anacapa eDNA sequence analysis pipeline (https://github.com/limey-bean/Anacapa; Curd et al. in prep) or QIIME (Caporaso 2010), into phyloseq objects that can be used for downstream visualizations and analyses. The second set of functions, which includes two externally written functions openly available on GitHub, extends the visualization and statistical functionality of the `phyloseq` [@McMurdie_2013] and `vegan` (@Oksanen_2018) packages.
 
-The Shiny app (http://gauravsk.shinyapps.io/ranacapa or rancapa::runRanacapaApp) allows users to interact with eDNA results through statistical summaries and interactive plots, displayed in the following tabs:
+The Shiny app (http://gauravsk.shinyapps.io/ranacapa or `rancapa::runRanacapaApp()`) allows users to interact with eDNA results through statistical summaries and interactive plots, displayed in the following tabs:
 
-- Sample rarefying: This tab explains the basic logic behind rarefying samples in metagenomics studies, and allows users to choose the sampling depth (Figure 1). Users can control the number of times the samples are rarified. The documentation on this tab also acknowledges recent disagreement regarding the value of rarefying in metabarcoding and eDNA sequencing studies (McMuride & Holmes 2014).  
+- **Sample rarefying**: This tab explains the basic logic behind rarefying samples in metagenomics studies, and allows users to choose the sampling depth (Figure 1). Users can control the number of times the samples are rarified. The documentation on this tab also acknowledges recent disagreement regarding the value of rarefying in metabarcoding and eDNA sequencing studies (@McMurdie_2014), and allows users to proceed through the rest of the app without rarefying samples.  
 
 #### Figure 1
-```{r, fig.cap="Figure 1: Taxon accumulation curve as shown in the first tab of ranacapa"}
+```{r, fig.cap="Figure 1: Taxon accumulation curve as shown in the first tab of ranacapa. "}
 fig1
 ```
 
-
-- Taxonomy heatmap: This tab shows the taxonomy-by-sample matrix as an interactive heatmap made using heatmaply (), where the color represent the number of times a given taxon was sequenced in a sample (Figure 2).   
+- **Taxonomy heatmap**: This tab shows the taxonomy-by-sample matrix as an interactive heatmap made using `heatmaply::heatmaply()`, where the color represent the number of times a given taxon was sequenced in a sample (Figure 2).   
 
 #### Figure 2
-```{r, fig.cap="Figure 2: Taxonomy heatmap as shown in the first tab of ranacapa"}
+```{r, fig.cap="Figure 2: Taxonomy heatmap as shown in the ranacapa Shiny app. Taxonomy is shown at the Order level in this figure; in the app, users can choose the taxonomic level to show in the heatmap."}
 fig2
 ```
 
-- Taxonomy barplot: This tab shows the taxonomy-by-sample matrix as an interactive barplot (Figure 3).  
-- Alpha diversity plots: This tab introduces the concept of Alpha diversity and that diversity can be calculated using a variety of metrics. Users can plot Alpha diversity as observed taxon richness or as Shannon Diversity per sample (or in samples grouped according to a variable in the metadata file, Figure 4).   
-- Alpha diversity statistics: This tab allows users to choose a variable from the metadata, and generates an Alpha diversity ANOVA table according to the user-selected variable. The tab also shows the output from  a post-hoc Tukey test.    
-- Beta diversity plots: This tab introduces the concept of Beta diversity and shows a PCoA plot differentiating each sample. Points on the PCoA plot are colored according to a user-selected metadata variable (Figure 5). The tab also shows dissimilarity among sites according in a dendrogram generated with Ward’s cluster analysis (stats::hclust(distance_object, method = “ward.d2”), where distance_object is made using phyloseq::distance() and a user-selected distance method (Jaccard or Bray-Curtis)). 
-- Beta diversity statistics: This tab shows results from two statistical tests of species turnover across site: first, a multivariate ANOVA (implemented with vegan::adonis()) and an associated pairwise comparison (implemented with ranacapa::pairwise_adonis()); second, heterogeneity of variances can be assessed using vegan::betadisper().  
-- More references
+- **Taxonomy barplot**: This tab shows the taxonomy-by-sample matrix as an interactive barplot (Figure 3).  
+
+#### Figure 3
+```{r, fig.cap="Figure 3: Taxonomy barplot as shown in the ranacapa Shiny app. Taxonomy is shown at the Order level in this figure; in the app, users can choose the taxonomic level to show in the barplot"}
+fig3
+```
+
+- **Alpha diversity plots**: This tab introduces the concept of Alpha diversity and that diversity can be calculated using a variety of metrics. Users can plot Alpha diversity as observed taxon richness or as Shannon Diversity per sample (or in samples grouped according to a variable in the metadata file, Figure 4).   
+
+#### Figure 4
+```{r, fig.cap="Figure 4: Alpha diveristy boxplots as shown in the ranacapa Shiny app. Users can select the X-axis variable using a dropdown menu in the app."}
+fig4
+```
+
+- **Alpha diversity statistics**: This tab allows users to choose a variable from the metadata, and generates an Alpha diversity ANOVA table according to the user-selected variable. The tab also shows the output from  a post-hoc Tukey test. 
+
+- **Beta diversity plots**: This tab introduces the concept of Beta diversity and shows a PCoA plot differentiating each sample. Points on the PCoA plot are colored according to a user-selected metadata variable (Figure 5). The tab also shows dissimilarity among sites according in a dendrogram generated with Ward’s cluster analysis (`stats::hclust(distance_object, method = "ward.d2")`, where `distance_object` is made using `phyloseq::distance()`. For both figures, users can toggle between using Jaccard and Bray-Curtis dissimilarity. 
+
+#### Figure 5
+```{r, fig.cap="Figure 5: PCoA ordination of the samples as shown in the ranacapa Shiny app. Users can select the grouping variable with a dropdown menu in the app."}
+fig5
+```
+
+- **Beta diversity statistics**: This tab shows results from two statistical tests of species turnover across site: first, a multivariate ANOVA (implemented with `vegan::adonis())` and an associated pairwise comparison (implemented with `ranacapa::pairwise_adonis()`); second, heterogeneity of variances can be assessed using `vegan::betadisper()`.  
+
+- **More references**
 
 ## Operation
-ranacapa depends on Bioconductor v 3.7 and R v 3.5.1. The Shiny app has been tested on Chrome and Firefox on Windows, Mac-OSX, and Ubuntu. The package can be installed using the command “devtools::install_github(“gauravsk/ranacapa”)”, and the Shiny app is available at http://gauravsk.shinyapps.io/ranacapa.
-ranacapa focuses on visualizing and analyzing the taxonomy tables generated by two metabarcode sequence analysis pipelines: Anacapa (https://github.com/limey-bean/Anacapa) and QIIME (http://qiime2.org/). Anacapa generates tab-delimited taxonomy tables, with each row representing the taxonomic identification for each Amplicon Sequence Variant (ASV) and each column representing a sequenced sample. QIIME allows users to export ASV tables in the standard BIOM table format and taxonomy files as .tsv format files. Either the Anacapa .txt or the QIIME .biom files can be uploaded as the taxonomy files for ranacapa. ranacapa also expects sample metadata to be uploaded as a tab-delimited .txt file. The ranacapa function validate_input_files() verifies that both the taxonomy table and the metadata files match certain structural requirements, which are documented in the function help files. The current version of ranacapa accepts both categorical and continuous metadata columns, but in the latter case, continuous values are categorized into bins.
+ranacapa depends on Bioconductor v 3.7 and `R` v 3.5.1. The Shiny app has been tested on Chrome and Firefox on Windows, Mac-OSX, and Ubuntu. The package can be installed using the command `devtools::install_github("gauravsk/ranacapa")`, and the Shiny app is available at http://gauravsk.shinyapps.io/ranacapa.
+ranacapa focuses on visualizing and analyzing the taxonomy tables generated by two metabarcode sequence analysis pipelines: Anacapa (https://github.com/limey-bean/Anacapa) and QIIME (http://qiime2.org/). Anacapa generates tab-delimited taxonomy tables, with each row representing the taxonomic identification for each Amplicon Sequence Variant (ASV) and each column representing a sequenced sample. QIIME allows users to export ASV tables in the standard BIOM table format and taxonomy files as `.tsv` format files. Either the Anacapa `.txt` or the QIIME `.biom` files can be uploaded as the taxonomy files for `ranacapa`. `ranacapa` also expects sample metadata to be uploaded as a tab-delimited `.txt` file. The ranacapa function `validate_input_files()` verifies that both the taxonomy table and the metadata files match certain structural requirements, which are documented in the function help files. The current version of ranacapa accepts both categorical and continuous metadata columns, but in the latter case, continuous values are categorized into bins.
 
 ## Use Cases
 We designed ranacapa to be used by eDNA researchers to share the results from their research with community partners. Specifically, we expect that researchers with bioinformatic expertise will use best-practices to assign taxonomy to eDNA datasets using the pipeline of their choice and generate clean taxonomy and metadata files. Researchers will then use ranacapa to share results with their community partners, emphasizing the analyses or visualizations most appropriate to their use case. We document two such partnerships below that showcase how ranacapa can facilitate authentic communication between researchers and community scientists.
 
 ### Use Case 1: How ranacapa facilitated a collaboration between eDNA researchers and managers at the National Park Service
 
-eDNA research scientists can use ranacapa to share results, especially interactive taxonomy lists, with natural resource managers. For example ranacapa was used by researchers at UCLA who partner with resource managers at the Channel Islands National Park to assess the potential for eDNA as a biodiversity monitoring tool in the Southern California Channel Islands. The goal of this ongoing collaboration is to assess whether eDNA metabarcoding studies can provide insights to supplement ongoing management efforts at the park, which are currently done with expensive and time-intensive visual surveys (Lessios 1996, Murphy and Jenkins 2010, Usseglio 2015). Implementing streamlined eDNA-based monitoring may allow a dramatic expansion in the scope and scale of marine ecosystem assessment in the California (Edgar et al. 2007, Deiner et al. 2017).
+eDNA research scientists can use ranacapa to share results, especially interactive taxonomy lists, with natural resource managers. For example ranacapa was used by researchers at UCLA who partner with resource managers at the Channel Islands National Park to assess the potential for eDNA as a biodiversity monitoring tool in the Southern California Channel Islands. The goal of this ongoing collaboration is to assess whether eDNA metabarcoding studies can provide insights to supplement ongoing management efforts at the park, which are currently done with expensive and time-intensive visual surveys (@Lessios_1996, @Murphy_2010, @Usseglio_2015). Implementing streamlined eDNA-based monitoring may allow a dramatic expansion in the scope and scale of marine ecosystem assessment in the California (@Edgar_2007, @Deiner_2017).
 
 To begin exploring whether eDNA-based studies can supplement visual underwater surveys, resource managers at the Channel Islands National Park Service collected and filtered thirty-1L water samples for eDNA analysis at permanent monitoring sites inside and adjacent to MPAs in the park. Research scientists at UCLA performed metabarcode sequencing of the mitochondrial 12S and CO1 gene regions from these samples targeting bony fishes, elasmobranches, and invertebrate taxa. The researchers processed sequences and assigned taxonomy using the Anacapa toolkit. When taxonomy tables were ready,  researchers used the ranacapa Shiny app to share results from this pilot study with National Park resource managers. 
 
@@ -106,15 +124,15 @@ The taxonomy heatmap (Figure 3) was the most valuable vizualation to this collab
 
 ### Use Case 2: How ranacapa helps undergraduate environmental microbiology students pursue sophisticated microbiome analyses
 
-Students can use ranacapa to interact with results from metabarcoding studies and to learn the basic structure of eDNA datasets. A research-based environmental microbiology course at UCLA (Sanders et al. 2016) used eDNA metabarcoding approaches to study the impact of a recent local wildfire on the plant and soil microbial community. The goal of this twenty-week course was to provide students an authentic experience in basic microbiology and microbial community ecology research. The instructors helped students develop a research question, design a sampling regime to test their hypotheses, and conduct fieldwork to collect soil samples for eDNA analyses in burned and unburned natural areas. Over the first ten weeks of the course, the instructional team (which included eDNA research scientists) extracted total DNA and sequenced the ITS2 (Gu et al. 2013) and 16S SSU RNA (Caporaso et al. 2012) metabarcoding region to characterize the plant, bacterial, and archaeal communities in the student-collected soil samples. The researchers then processed the sequences and assigned taxonomy using the Anacapa toolkit. 
+Students can use ranacapa to interact with results from metabarcoding studies and to learn the basic structure of eDNA datasets. A research-based environmental microbiology course at UCLA [@Shapiro_2015] used eDNA metabarcoding approaches to study the impact of a recent local wildfire on the plant and soil microbial community. The goal of this twenty-week course was to provide students an authentic experience in basic microbiology and microbial community ecology research. The instructors helped students develop a research question, design a sampling regime to test their hypotheses, and conduct fieldwork to collect soil samples for eDNA analyses in burned and unburned natural areas. Over the first ten weeks of the course, the instructional team (which included eDNA research scientists) extracted total DNA and sequenced the ITS2 [@Gu_2013] and 16S SSU RNA [@Caporaso_2012] metabarcoding region to characterize the plant, bacterial, and archaeal communities in the student-collected soil samples. The researchers then processed the sequences and assigned taxonomy using the Anacapa toolkit. 
 
 Shortly after taxonomy tables were generated, the course instructors introduced students to eDNA data exploration and simple statistical analyses using ranacapa. A key strength of using ranacapa was that despite having no prior bioinformatics experience, students began exploring on the an online instance of Shiny app (http://gauravsk.shinyapps.io/ranacapa) within a single class period. Thus, using ranacapa allowed the instructors to focus their time with the students on biological questions rather than on troubleshooting bioinformatics problems, as had been the case in previous sessions of the course. The course instructors noted that this basic exploration in ranacapa, which was not part of the curriculum in previous iterations of the course, had several positive impacts on students and their research projects. First, ranacapa helped students explore the basic structure of the dataset and begin to understand the relationships between community profile and the various metadata they had collected in the field. Second, ranacapa opened the door to basic diversity analyses– for example, students could easily test their hypotheses regarding the taxonomic diversity of microbes in burned and unburned soils.  Third, by significantly reducing the time and difficulty in visualizing soil microbial diversity patterns, ranacapa helped students develop and pursue more sophisticated analyses during the remaineder of the course using tools such as STAMP. The taxonomy tables and metadata files used in this course are available online at XXXX.
 
 ## Summary and Future Directions
 
-Metabarcode sequencing of environmental DNA is becoming a key tool in a wide variety of ecological studies, and results from these studies are of interest to a broad audience.  Our R package and Shiny web-app ranacapa helps users conduct exploratory analyses and visualizations on eDNA datasets, and is a step toward making the results from large eDNA studies more accessible and understandable for a wide range of community research partners. ranacapa is designed to be used as a first step in visualizing results from such studies, and we encourage researchers to perform additional analyses outside of the Shiny app according to the specific project requirements. 
+Metabarcode sequencing of environmental DNA is becoming a key tool in a wide variety of ecological studies, and results from these studies are of interest to a broad audience.  Our `R` package and Shiny web-app `ranacapa` helps users conduct exploratory analyses and visualizations on eDNA datasets, and is a step toward making data and analyses from eDNA sequencing-based studies more accessible and understandable for a wide range of community research partners. 
 
-We propose three avenues for future work in ranacapa. First, we plan to use ranacapa as the primary tool to present eDNA results from hundreds of samples sequenced by the CALeDNA community science program. The positive experience with reserve managers suggests open forums to discuss ranacapa output will be fruitful to strengthen the feedback loop between community partners and researchers. Second, ranacapa will be a key tool in the upcoming undergraduate curriculum module “Pipeline for Undergraduate Microbiome Analysis”, which is being built as a complete suite of analysis and data visualization tools which will be made openly available to undergraduate researchers. Finally, in the long-term, we believe that there is great promise in connecting ranacapa to Taxa [] and ultimately to packages that connect with APIs of online biodiversity databases (e.g. Taxize, rinat). This will help users explore a much wider range of biodiversity questions, for example, by programmatically asking whether their samples include invasive species that are absent from other nearby sites. Such apps that allow non-technical audiences to easily interact with results from eDNA sequencing studies have great potential to engage community partners with a wide range of backgrounds and interests in primary research.
+We propose three avenues for future work in ranacapa. First, we plan to use ranacapa as the primary tool to present eDNA results from hundreds of samples sequenced by the CALeDNA community science program. The positive experience with reserve managers suggests open forums to discuss ranacapa output will be fruitful to strengthen the feedback loop between community partners and researchers. Second, ranacapa will be a key tool in the upcoming undergraduate curriculum module “Pipeline for Undergraduate Microbiome Analysis”, which is being built as a complete suite of analysis and data visualization tools which will be made openly available to undergraduate researchers. Finally, in the long-term, we believe that there is great promise in connecting ranacapa to packages that connect with APIs of online biodiversity databases (e.g. Taxize, rinat). This will help users explore a much wider range of biodiversity questions, for example, by programmatically asking whether their samples include invasive species that are absent from other nearby sites. Such apps that allow non-technical audiences to easily interact with results from eDNA sequencing studies have great potential to engage community partners with a wide range of backgrounds and interests in primary research.
 
 ## Software availability
 
@@ -138,3 +156,7 @@ GSK and ZJG were supported by the US-NSF Graduate Research Fellowship (DEG No. 1
 
 ## Acknowledgments
 We thank Sabrina Shirazi, Rachel Turba, Chris Dao, and Keith Mitchell for providing feedback on developmental versions of this package. Ranacapa builds on numerous functions that have been made openly available online with a GPL-3 License, namely the “phyloseq-extended” toolkit written by Mahendra Mariadassau (https://github.com/mahendra-mariadassou/phyloseq-extended) and “pairwise.adonis” written by Pedro Martinez Arbizu (https://github.com/pmartinezarbizu/pairwiseAdonis). 
+
+\clearpage
+
+## References
