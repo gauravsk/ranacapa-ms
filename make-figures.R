@@ -1,4 +1,3 @@
-# Figure 1
 library(ranacapa)
 library(plotly)
 library(phyloseq)
