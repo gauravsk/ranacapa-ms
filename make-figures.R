@@ -84,3 +84,10 @@ fig5 <- ggplotly(tooltip = c("Island", "x", "y")) %>%
   layout(hovermode = 'closest')
 
 save.image(file = "make-figures.Rdata")
+
+# ----------
+htmlwidgets::saveWidget(fig1, file = file.path(getwd(), "figure-files", "fig1.html"), selfcontained = T)
+htmlwidgets::saveWidget(fig2, file = file.path(getwd(), "figure-files", "fig2.html"), selfcontained = T)
+htmlwidgets::saveWidget(fig3, file = file.path(getwd(), "figure-files", "fig3.html"), selfcontained = T)
+htmlwidgets::saveWidget(fig4, file = file.path(getwd(), "figure-files", "fig4.html"), selfcontained = T)
+htmlwidgets::saveWidget(fig5, file = file.path(getwd(), "figure-files", "fig5.html"), selfcontained = T)
