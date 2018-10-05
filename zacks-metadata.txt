@@ -1,43 +1,43 @@
-Sample	Sample_or_Control	Island	Protection	SST
-pos_control_1	Control	NA	NA	NA
-field_blank_1	Control	NA	NA	NA
-PCR_blank_1	Control	NA	NA	NA
-pos_control_2	Control	NA	NA	NA
-PCR_blank_2	Control	NA	NA	NA
-PCR_blank_3	Control	NA	NA	NA
-PCR_blank_4	Control	NA	NA	NA
-field_blank_2	Control	NA	NA	NA
-field_blank_3	Control	NA	NA	NA
-field_blank_4	Control	NA	NA	NA
-field_blank_5	Control	NA	NA	NA
-field_blank_6	Control	NA	NA	NA
-Light_house	Sample	Anacapa	MPA	16
-Landing_Cove	Sample	Anacapa	MPA	16
-Black_seabass_reef_1	Sample	Anacapa	MPA	16
-Arch_point_1	Sample	Santa Barabara	unprotected	17
-Arch_point_2	Sample	Santa Barabara	unprotected	17
-Cat_canyon_1	Sample	Santa Barabara	unprotected	17
-Cat_canyon_2	Sample	Santa Barabara	unprotected	17
-Frys_harbor	Sample	Santa Cruz	unprotected	16
-Pelican_bay	Sample	Santa Cruz	unprotected	16
-Cavern_point	Sample	Santa Cruz	MPA	16
-Devils_peak_member	Sample	Santa Cruz	MPA	16
-Graveyard_canyon_1	Sample	Santa Barabara	MPA	17
-Gull_Island_south_1	Sample	Santa Cruz	MPA	16
-Johnsons_lee_south	Sample	Santa Rosa	unprotected	16
-Johnsons_lee_north	Sample	Santa Rosa	unprotected	15
-Webster_arch	Sample	Santa Barabara	unprotected	17
-Pedro_reef	Sample	Santa Cruz	unprotected	16
-South_point	Sample	Santa Rosa	MPA	15
-Scorpion_anchorage	Sample	Santa Cruz	MPA	16
-Chicksaw	Sample	Santa Rosa	MPA	15
-Graveyard_canyon2	Sample	Santa Barabara	MPA	17
-Black_seabass_reef_2	Sample	Anacapa	MPA	16
-Gull_Island_south_2	Sample	Santa Cruz	MPA	16
-Cluster_point	Sample	Santa Rosa	unprotected	15
-Southeast_sea_lion	Sample	Santa Barabara	MPA	17
-Hare_rock	Sample	San Miguel	MPA	14
-Wychoff_ledge	Sample	San Miguel	unprotected	14
-Trancion_canyon	Sample	Santa Rosa	MPA	15
-Yellowbanks	Sample	Santa Cruz	unprotected	16
-Miracle_mile	Sample	San Miguel	unprotected	14
+Sample Sample_or_Control Island Protection Locality
+pos_control_1 Control NA NA control
+field_blank_1 Control NA NA control
+PCR_blank_1 Control NA NA control
+pos_control_2 Control NA NA control
+PCR_blank_2 Control NA NA control
+PCR_blank_3 Control NA NA control
+PCR_blank_4 Control NA NA control
+field_blank_2 Control NA NA control
+field_blank_3 Control NA NA control
+field_blank_4 Control NA NA control
+field_blank_5 Control NA NA control
+field_blank_6 Control NA NA control
+Light_house Sample Anacapa MPA Light_house
+Landing_Cove Sample Anacapa MPA Landing_Cove
+Black_seabass_reef_1 Sample Anacapa MPA Black_seabass_reef
+Arch_point_1 Sample Santa Barabara unprotected Arch_point
+Arch_point_2 Sample Santa Barabara unprotected Arch_point
+Cat_canyon_1 Sample Santa Barabara unprotected Cat_canyon
+Cat_canyon_2 Sample Santa Barabara unprotected Cat_canyon
+Frys_harbor Sample Santa Cruz unprotected Frys_harbor
+Pelican_bay Sample Santa Cruz unprotected Pelican_bay
+Cavern_point Sample Santa Cruz MPA Cavern_point
+Devils_peak_member Sample Santa Cruz MPA Devils_peak_member
+Graveyard_canyon_1 Sample Santa Barabara MPA Graveyard_canyon
+Gull_Island_south_1 Sample Santa Cruz MPA Gull_island
+Johnsons_lee_south Sample Santa Rosa unprotected Johnsons_lee
+Johnsons_lee_north Sample Santa Rosa unprotected Johnsons_lee
+Webster_arch Sample Santa Barabara unprotected Webster_arch
+Pedro_reef Sample Santa Cruz unprotected Pedro_reef
+South_point Sample Santa Rosa MPA South_point
+Scorpion_anchorage Sample Santa Cruz MPA Scorpion_anchorage
+Chicksaw Sample Santa Rosa MPA Chicksaw
+Graveyard_canyon2 Sample Santa Barabara MPA Graveyard_canyon
+Black_seabass_reef_2 Sample Anacapa MPA Black_seabass_reef
+Gull_Island_south_2 Sample Santa Cruz MPA Gull_island
+Cluster_point Sample Santa Rosa unprotected Cluster_point
+Southeast_sea_lion Sample Santa Barabara MPA Southeast_sea_lion
+Hare_rock Sample San Miguel MPA Hare_rock
+Wychoff_ledge Sample San Miguel unprotected Wychoff_ledge
+Trancion_canyon Sample Santa Rosa MPA Trancion_canyon
+Yellowbanks Sample Santa Cruz unprotected Yellowbanks
+Miracle_mile Sample San Miguel unprotected Miracle_mile
