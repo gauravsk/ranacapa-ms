@@ -140,13 +140,13 @@ We propose three avenues for future work with ranacapa. First, we plan to use `r
 - License: CC-BY 4.0
 
 ## Author contributions
-GSK led the development of ranacapa, with help from MCC. ZJG and EEC provided feedback regarding which analyses and visualization options to include. ZJG performed the MPA eDNA study in collaboration with JS and DK. NK, GSK, EC, and RM collaborated with AF and JMP, who used `ranacapa` in their microbiology undergraduate course. GSK wrote the first draft of this manuscript; all authors contributed to revisions.
+GSK led the development of ranacapa, with help from MCC. ZJG and EEC provided feedback regarding which analyses and visualization options to include. ZJG performed the MPA eDNA study in collaboration with JS and DK. NJBK, GSK, EEC, and RSM collaborated with AF and JMP, who used `ranacapa` in their microbiology undergraduate course. GSK wrote the first draft of this manuscript; all authors contributed to revisions.
 
 ## Competing interests
 No competing interests were disclosed
 
 ## Grant information
-GSK and ZJG were supported by the US-NSF Graduate Research Fellowship (DEG No. 1650604). EEC is supported by the CALeDNA program, with funds from University of California President’s Research Catalyst Award (CA-16-376437).
+GSK and ZJG were supported by the US-NSF Graduate Research Fellowship (DEG No. 1650604). EEC, RSM, and the CALeDNA program are supported by the University of California President’s Research Catalyst Award (CA-16-376437).    
 
 ## Acknowledgments
 We thank Sabrina Shirazi, Rachel Turba, Chris Dao, and Keith Mitchell for providing feedback on developmental versions of this package. We also thank Mahendra Mariadassau and  Pedro Martinez Arbizu for making their `phyloseq-extended` (https://github.com/mahendra-mariadassou/phyloseq-extended)  and `pairwiseAdonis` (https://github.com/pmartinezarbizu/pairwiseAdonis) packages openly available with a GPL-3 License.
