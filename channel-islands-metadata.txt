@@ -14,28 +14,28 @@ field_blank_6 Control NA NA control
 Light_house Sample Anacapa MPA Light_house
 Landing_Cove Sample Anacapa MPA Landing_Cove
 Black_seabass_reef_1 Sample Anacapa MPA Black_seabass_reef
-Arch_point_1 Sample Santa Barabara unprotected Arch_point
-Arch_point_2 Sample Santa Barabara unprotected Arch_point
-Cat_canyon_1 Sample Santa Barabara unprotected Cat_canyon
-Cat_canyon_2 Sample Santa Barabara unprotected Cat_canyon
+Arch_point_1 Sample Santa Barbara unprotected Arch_point
+Arch_point_2 Sample Santa Barbara unprotected Arch_point
+Cat_canyon_1 Sample Santa Barbara unprotected Cat_canyon
+Cat_canyon_2 Sample Santa Barbara unprotected Cat_canyon
 Frys_harbor Sample Santa Cruz unprotected Frys_harbor
 Pelican_bay Sample Santa Cruz unprotected Pelican_bay
 Cavern_point Sample Santa Cruz MPA Cavern_point
 Devils_peak_member Sample Santa Cruz MPA Devils_peak_member
-Graveyard_canyon_1 Sample Santa Barabara MPA Graveyard_canyon
+Graveyard_canyon_1 Sample Santa Barbara MPA Graveyard_canyon
 Gull_Island_south_1 Sample Santa Cruz MPA Gull_island
 Johnsons_lee_south Sample Santa Rosa unprotected Johnsons_lee
 Johnsons_lee_north Sample Santa Rosa unprotected Johnsons_lee
-Webster_arch Sample Santa Barabara unprotected Webster_arch
+Webster_arch Sample Santa Barbara unprotected Webster_arch
 Pedro_reef Sample Santa Cruz unprotected Pedro_reef
 South_point Sample Santa Rosa MPA South_point
 Scorpion_anchorage Sample Santa Cruz MPA Scorpion_anchorage
 Chicksaw Sample Santa Rosa MPA Chicksaw
-Graveyard_canyon2 Sample Santa Barabara MPA Graveyard_canyon
+Graveyard_canyon2 Sample Santa Barbara MPA Graveyard_canyon
 Black_seabass_reef_2 Sample Anacapa MPA Black_seabass_reef
 Gull_Island_south_2 Sample Santa Cruz MPA Gull_island
 Cluster_point Sample Santa Rosa unprotected Cluster_point
-Southeast_sea_lion Sample Santa Barabara MPA Southeast_sea_lion
+Southeast_sea_lion Sample Santa Barbara MPA Southeast_sea_lion
 Hare_rock Sample San Miguel MPA Hare_rock
 Wychoff_ledge Sample San Miguel unprotected Wychoff_ledge
 Trancion_canyon Sample Santa Rosa MPA Trancion_canyon
